@@ -1,0 +1,71 @@
+<h2>Add New Customer</h2>
+<br />
+<form [formGroup]="customerForm" (ngSubmit)="add()" autocomplete="off">
+
+  <div class="form-group">
+    <label for="firstname">
+      Firstname
+    </label>
+    <input id="firstname" class="form-control" type="text" formControlName="firstname">
+
+  </div>
+
+  <div>
+    <label for="lastname">
+      Lastname
+    </label>
+    <input id="lastname" class="form-control" type="text" formControlName="lastname">
+  </div>
+
+  <div>
+    <label for="email">
+      Emaill
+    </label>
+    <input id="email" class="form-control" type="text" formControlName="email">
+    <span class="text-danger"
+          *ngIf="
+                  (registerFormControl.email.touched || saved) &&
+                  registerFormControl.email.errors?.['required']">
+      Email is required
+    </span>
+  </div>
+
+  <div>
+    <label for="phone_Number">
+      Phone Number
+    </label>
+    <input id="phone_Number" class="form-control" type="text" formControlName="phone_Number">
+  </div>
+
+  <div>
+    <label for="country_code">
+      Country Code
+    </label>
+    <input id="country_code" class="form-control" type="text" formControlName="country_code">
+  </div>
+
+  <div>
+    <label for="gender">
+      Gender
+    </label>
+    <input id="gender" class="form-control" type="text" formControlName="gender">
+  </div>
+
+  <div>
+    <label for="currency">
+      Currency
+    </label>
+    <input id="currency" class="form-control" type="text" formControlName="currency">
+  </div>
+
+  <div>
+    <label for="balance">
+      Balance
+    </label>
+    <input id="balance" class="form-control" type="text" formControlName="balance">
+  </div>
+
+  <br />
+  <button class="btn btn-primary" type="submit">Add</button>
+
+</form>

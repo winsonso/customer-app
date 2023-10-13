@@ -1,0 +1,42 @@
+<div *ngIf="customer">
+  <h2>{{customer.firstname | uppercase}} Details</h2>
+  <div><span>id: </span>{{customer.id}}</div>
+  <div>
+    <div class="form-group">
+      <label for="customer-firstname">Firstname: </label>
+      <input id="customer-firstname" class="form-control" [(ngModel)]="customer.firstname" placeholder="Customer firstname" />
+    </div>
+    <div class="form-group">
+      <label for="customer-lastname">Lastname: </label>
+      <input id="customer-lastname" class="form-control" [(ngModel)]="customer.lastname" placeholder="Customer firstname" />
+    </div>
+    <div class="form-group">
+      <label for="email">Email: </label>
+      <input id="email" class="form-control" [(ngModel)]="customer.email" placeholder="Email" />
+      <span class="text-danger"
+            *ngIf="
+                  !customer.email">
+        Email is required
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="phone-number">Phone Number: </label>
+      <input id="phone-number" class="form-control" [(ngModel)]="customer.phone_Number" placeholder="Phone Number" />
+    </div>
+    <div class="form-group">
+      <label for="country-code">Country Code: </label>
+      <input id="country-code" class="form-control" [(ngModel)]="customer.country_code" placeholder="Country Code" />
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender: </label>
+      <input id="gender" class="form-control" [(ngModel)]="customer.gender" placeholder="Gender" />
+    </div>
+    <div class="form-group">
+      <label for="balance">Balance: </label>
+      <input id="balance" class="form-control" [(ngModel)]="customer.balance" placeholder="Balance" />
+    </div>
+
+    <button class="btn btn-primary" type="button" (click)="save(customer)">Save</button>
+    <button class="btn btn-primary" type="button" (click)="goBack()">Back</button>
+  </div>
+</div>
